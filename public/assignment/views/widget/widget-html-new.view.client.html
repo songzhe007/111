@@ -1,0 +1,48 @@
+<nav id="profile_nav_bar" class="navbar navbar-fixed-top rt-navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <p class="navbar-text pull-left">
+                <a href="#!/website/{{model.wid}}/page/{{model.pid}}/widget/new"
+                   class="navbar-link rt-text-color-white rt-col-l-r-20">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </p>
+            <a class="rt-text-color-white navbar-brand">
+                Create HTML Widget
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container rt-form-top-padding">
+    <form class="cl-form-bottom-padding">
+        <label for="name">Name</label>
+        <input ng-model="model.widget.name" type="text" class="form-control" placeholder="Name" id="name" required>
+
+        <label for="text">Text</label>
+        <div class="form-group">
+            <div ng-model="model.widget.text" id="text" type="text" placeholder="Juicero shows what’s wrong with Silicon Valley thinking" id="text" required
+                 text-angular
+                 ta-toolbar = "[['h1','h2','h3'],
+                     ['bold','italics','underline','strikeThrough'],
+                     ['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],
+                     ['indent','outdent'],['html']]">
+            </div>
+        </div>
+
+
+    </form>
+        <a ng-click="model.createWidget(model.widget)" class="btn btn-primary btn-block" id="widget-heading-create-btn">Create</a>
+    </form>
+    <div ng-show="model.createError" class="alert alert-danger rt-alert-padding" role="alert">{{model.createError}}</div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid row">
+        <div class="navbar-text pull-right">
+            <a href="#!/profile" class="cl-icon-padding">
+                <span class="glyphicon glyphicon-user"></span>
+            </a>
+        </div>
+    </div>
+</nav>

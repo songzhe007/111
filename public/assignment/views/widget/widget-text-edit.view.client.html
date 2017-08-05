@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <form class="cl-form-bottom-padding">
+        <label for="name">Name</label>
+        <input ng-model="model.widget.name" type="text" class="form-control" placeholder="Name" id="name" required>
+
+        <label for="text">Text</label>
+        <input ng-model="model.widget.text" type="text" class="form-control" placeholder="Juicero shows what’s wrong with Silicon Valley thinking" id="text" required>
+
+        <label for="rows">Rows</label>
+        <input ng-model="model.widget.rows" type="text" class="form-control" placeholder="3" id="rows" required>
+
+        <label for="placeholder">Placeholder</label>
+        <input ng-model="model.widget.placeholder" type="text" class="form-control" placeholder="Name" id="placeholder" required>
+
+        <label for = "text-formatted">Formatted</label>
+        <input ng-model="model.widget.formatted" class="form-check" id="text-formatted" type="checkbox"/>
+    </form>
+    <a class="btn btn-danger btn-block" ng-click="model.deleteWidget()" a href = "#!/website/{{model.wid}}/page/{{model.pid}}/widget">Delete</a>
+</div>

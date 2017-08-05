@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <form class="cl-form-bottom-padding">
+        <label for="name">Name</label>
+        <input ng-model="model.widget.name" type="text" class="form-control" placeholder="Name" id="name" required>
+        <label for="text">Text</label>
+        <input ng-model="model.widget.text" type="text" class="form-control" id="text" required>
+        <label for="url">URL</label>
+        <input ng-model="model.widget.url" type="text" class="form-control" placeholder="https://img.washingtonpost.com/blogs/post-partisan/files/2017/04/bigstock-128312288-1024x794.jpg" id="url" required>
+        <label for="width">Width</label>
+        <input ng-model="model.widget.width" type="text" class="form-control" placeholder="100%" id="width" required>
+    </form>
+
+
+
+
+    <form action=/api/upload   method="post" enctype="multipart/form-data">
+        <input  name="myFile"    type="file" class="form-control"/>
+        <input  name="width"     value="100%" style="display: none"/>
+        <input  name="userId"    value="{{model.uid}}"   style="display: none"/>
+        <input  name="websiteId" value="{{model.wid}}"   style="display: none"/>
+        <input  name="pageId"    value="{{model.pid}}"   style="display: none"/>
+        <input  name="widgetId"  value="{{model.wgid}}"   style="display: none"/>
+        <button type="submit"    class="btn btn-block btn-primary">Upload Image</button>
+    </form>
+
+
+    <a class="btn btn-danger btn-block" ng-click="model.deleteWidget(model.wgid)"
+       a href = "#!/website/{{model.wid}}/page/{{model.pid}}/widget">Delete</a>
+</div>

@@ -3,7 +3,7 @@ module.exports = function() {
 
     if (process.env.MONGODB_URI) {
 
-        connectionString = 'mongodb://heroku_tgq1gmqg:e275dd4k4jd2g6rhdo3h6mleul@ds147551.mlab.com:47551/heroku_tgq1gmqg';
+        connectionString = 'mongodb://heroku_6z3kpcr5:lgvo91hqnrfa6g0sivmhbukkoi@ds129023.mlab.com:29023/heroku_6z3kpcr5';
     }
     else
     {

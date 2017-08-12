@@ -1,0 +1,35 @@
+<section ng-controller="SearchCtrl">
+    <form class="form-horizontal"   ng-submit="search()">
+        <div class="form-group">
+            <div class="controls">
+                <input ng-model="term" class="form-control" id="term" placeholder="Food"></input>
+                <input ng-model="location" class="form-control" id="location" placeholder="City or zipcode"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+            </div>
+        </div>
+    </form>
+
+    <table border="1">
+        <thead>
+        <tr ng-repeat="b in yelp_businesses | limitTo:1">
+          <th ng-repeat="(key, val) in b">
+            {{key}}
+          </th>
+          <th> Review </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="b in yelp_businesses">
+          <td ng-repeat="(key, val) in b" width="15%">
+            <div ng-bind-html="val">{{val}}</div>
+          </td>
+          <td> <div> <a href="/#/reviews/store/{{b.id}}/"> Review </a> </div> </td>
+        </tr>
+      </tbody>        
+    </table>
+
+</section>

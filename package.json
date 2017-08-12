@@ -1,32 +1,35 @@
 {
-  "name": "web-dev",
-  "version": "1.0.0",
-  "description": "Web Dev at Northeastern University",
+  "name": "yelpapp",
+  "version": "0.0.0",
+  "description": "",
   "main": "server.js",
-  "dependencies": {
-    "bcrypt": "^1.0.2",
-    "bcrypt-nodejs": "0.0.3",
-    "body-parser": "^1.15.1",
-    "cookie-parser": "^1.4.3",
-    "express": "^4.15.3",
-    "express-session": "^1.15.3",
-    "jquery": "^3.2.1",
-    "mongodb": "^2.2.30",
-    "mongoose": "^4.4.15",
-    "mule": "^0.1.0",
-    "multer": "^1.3.0",
-    "passport": "^0.3.2",
-    "passport-google-oauth": "^1.0.0",
-    "passport-local": "^1.0.0",
-    "q": "^1.5.0",
-    "sessions": "0.0.2-7",
-    "textangular": "^1.5.16"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
     "start": "node server.js"
   },
-  "author": "Jose G. Annunziato",
-  "license": "ISC"
+  "author": "0",
+  "license": "BSD-2-Clause",
+  "engines": {
+    "node": ">= 6.1.0",
+    "npm": ">= 3.10.0"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.6",
+    "morgan": "^1.8.2",
+    "node-uuid": "^1.4.7",
+    "nodemon": "^1.11.0",
+    "passport": "^0.3.2",
+    "passport-google-oauth": "~1.0.0",
+    "passport-local": "^1.0.0",
+    "q": "^1.5.0",
+    "yelp-api-v3": "^1.5.0"
+  }
 }

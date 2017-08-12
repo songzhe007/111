@@ -1,0 +1,46 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/"/>
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="css/main.css">
+        <!-- endbuild -->
+</head>
+  <body ng-app="yelpApp">
+
+    <!-- Add your site or application content here -->
+    <div ng-include="" src="'partials/navbar.html'"></div>
+    <div class="container" ng-view=""></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-2.2.0.min.js"><\/script>')</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- AngularJs-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular-route.js"></script>
+
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/navbar.js"></script>
+    <script src="scripts/controllers/signup.js"></script>
+    <script src="scripts/controllers/blogs.js"></script>
+    <script src="scripts/directives/uniqueUsername.js"></script>
+    <script src="scripts/services/Auth.js"></script>
+    <script src="scripts/services/User.js"></script>
+    <script src="scripts/directives/onFocus.js"></script>
+    <script src="scripts/directives/mongooseError.js"></script>
+    <script src="scripts/services/Session.js"></script>
+    <script src="scripts/services/Blogs.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,14 @@
+<section ng-controller="ReviewsCtrl" ng-init="list_reviews()">
+    <div ng-repeat="review in reviews">
+        <h1><a ng-href="reviews/{{review._id}}">{{review.title}}</a></h1>
+        <p>{{review.content}}</p>
+        <div>
+            <span class="badge badge-success">Posted {{review.created | date:'medium'}}</span>
+            <div class="pull-right"><span class="badge badge-success">Posted by {{review.creator.username}}</span></div>
+        </div>
+        <hr>
+    </div>
+    <h1 ng-hide="!reviews || reviews.length">No Reviews yet. <br> Why don't you <a href="api/reviews/create">Create One</a>?</h1>
+</section>
+
+

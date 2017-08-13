@@ -27,7 +27,7 @@
           <td ng-repeat="(key, val) in b" width="15%">
             <div ng-bind-html="val">{{val}}</div>
           </td>
-          <td> <div> <a href="/#/reviews/store/{{b.id}}/"> Review </a> </div> </td>
+          <td> <div> <a ng-href="/#/reviews/store/{{b.id}}/"> Review </a> </div> </td>
         </tr>
       </tbody>        
     </table>

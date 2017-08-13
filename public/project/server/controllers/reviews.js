@@ -3,10 +3,15 @@
 var mongoose = require('mongoose'),
     Reviews = mongoose.model('Reviews');
 
-// list all reviews
+// list reviews
 exports.all = function(req, res) {
-    console.log('reviews.all');
-    Reviews.find({}, function (err, reviews) {
+    console.log(req);
+    console.log('businessId: ' + req.query.bussinessId);
+    var condict = {}
+    if (req.query.businessId) {
+        condict = {businessId: req.query.businessId};
+    }
+    Reviews.find(condict, function (err, reviews) {
         if (err) {
             res.json(500, err);
         } else {
@@ -16,17 +21,26 @@ exports.all = function(req, res) {
 
 };
 
+
 exports.create = function(req, res) {
     console.log('create');
-    var review = new Reviews(req.body);
-    review.creator = req.user;
+    console.log('---params');
+    console.log(req.params);
+    console.log('---query');
+    console.log(req.query);
+    var review = new Reviews({
+        businessId: req.query.businessId,
+        title: req.query.title,
+        content: req.query.content
+    });
+    review.creator = 'test_user'; //req.user;
 
     review.save(function(err) {
         console.log('saving');
         if (err) {
-            res.json(500, err);
+            res.status(500).json(err);
         } else {
-            res.json(blog);
+            res.json(review);
         }
     });
 };

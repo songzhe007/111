@@ -14,7 +14,6 @@ var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
-
 var configDB = require('./server/config/database');
 var yelp = require('./server/config/yelp');
 
@@ -24,12 +23,15 @@ fs.readdirSync(modelsPath).forEach(function (file) {
   require(modelsPath + '/' + file);
 });
 
+var pass = require('./server/config/passport');
+
 // App Configuration
 app.use(morgan('dev')); // log every request to the console
 app.use(express.static(path.join(__dirname, '/client')));
 app.set('views', __dirname + '/client/views');
 
 app.set('view engine', 'html');
+app.engine('html', require('ejs').renderFile);
 
 // set up our express application
 app.use(cookieParser()); // read cookies (needed for auth)

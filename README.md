@@ -1,3 +1,13 @@
+# EatReview
+EatReview Project-CS5610 Web Dev
 
-# webdev-summer-2017
-EatReview
+
+## Installation
+
+`npm install --save`
+
+
+## Tests
+
+### Yelp APIs:
+`node test/yelp_test.js`

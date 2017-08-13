@@ -33,10 +33,11 @@ exports.create = function(req, res) {
         title: req.query.title,
         content: req.query.content
     });
-    review.creator = 'test_user'; //req.user;
+    review.creator = req.user.local.email; //req.user;
 
     review.save(function(err) {
-        console.log('saving');
+        console.log('saving1');
+        console.log(req.user);
         if (err) {
             res.status(500).json(err);
         } else {

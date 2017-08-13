@@ -27,7 +27,7 @@ angular.module('yelpApp')
         };
 
         $scope.create = function() {
-            if (!$routeScope.currentUser) {
+            if (!$rootScope.currentUser) {
                 $location.path('/');
                 return;
             }

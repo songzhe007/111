@@ -46,7 +46,7 @@ exports.login = function (req, res, next) {
         req.logIn(user, function(err) {
             if (err) { return res.send(err); }
             console.log('req.user.user_info', req.user);
-            res.json(req.user.user_info);
+            res.json(req.user);
         });
     })(req, res, next);
 }

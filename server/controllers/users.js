@@ -56,3 +56,40 @@ exports.exists = function (req, res, next) {
         }
     });
 }
+
+exports.all = function(req, res) {
+    User.find({}, function(err, users) {
+        if (err) {
+            res.status(500).json(err);
+        } else {
+            res.json(users);
+        }
+    })
+}
+
+exports.update_all = function(req, res) {
+    console.log('update_all', req.query.data);
+    var users = req.query.data;
+
+
+    function update_sync(index) {
+        if (index >= users.length) {
+            return;
+        }
+        var u = JSON.parse(users[index]);
+        User.findOne({'local.email': u['Email']}, function(err, user0) {
+            console.log('u: ', u['isAdmin']);
+            user0.admin = u['isAdmin'];
+            user0.save(function(err) {
+                if (err) {
+                    console.log('is admin saving err: ', err);
+                }
+                update_sync(index + 1);
+            });
+        });
+
+    }
+
+    update_sync(0);
+    res.status(200);
+}

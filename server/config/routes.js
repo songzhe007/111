@@ -31,6 +31,11 @@ module.exports = function(app, passport) {
   app.get('/api/reviews', reviews.all);
   app.post('/api/reviews/store/*/create', reviews.create);
 
+  // Users Routes
+  var users = require('../controllers/users');
+  app.get('/api/users', users.all);
+  app.post('/api/users', users.update_all);
+
   // Angular Routes
   app.get('/views/partials/*', function(req, res) {
     console.log('angular routes');

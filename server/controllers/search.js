@@ -6,7 +6,7 @@ exports.search = function(req, res) {
     yelp.search({
         term: 'food', //req.params.term,
         location: '94043', //req.params.location,
-        limit 10
+        limit: 10
     })
         .then(function(data) {
             var jsonObj = JSON.parse(data);

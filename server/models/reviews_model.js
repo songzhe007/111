@@ -10,7 +10,7 @@ var ReviewsSchema = new Schema({
         required: true
     },
     title: {
-        type: String,
+        type: String
     },
     content: {
         type: String,

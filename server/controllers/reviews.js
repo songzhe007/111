@@ -7,7 +7,7 @@ var mongoose = require('mongoose'),
 exports.all = function(req, res) {
     console.log(req);
     console.log('businessId: ' + req.query.bussinessId);
-    var condict = {}
+    var condict = {};
     if (req.query.businessId) {
         condict = {businessId: req.query.businessId};
     }

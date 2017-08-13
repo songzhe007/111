@@ -1,0 +1,29 @@
+<section ng-controller="AdminCtrl" ng-init="init()">
+<div> admin page </div>
+
+<div>
+  <p>Users List</p>
+<form class="form-horizontal" ng-submit="save()">
+      <table border="1">
+        <thead>
+        <tr ng-repeat="user in users | limitTo:1">
+          <th ng-repeat="(key, val) in user">
+            {{key}}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="user in users">
+          <td ng-repeat="(key, val) in user" width="15%" align="center">
+            <div>
+              <input type="checkbox" ng-show="key=='isAdmin'" ng-checked="user.isAdmin" ng-model="user.isAdmin" ng-true-value="true" ng-false-value="false"> {{val}}
+              <!-- <div ng-show="key!='isAdmin'"> {{val}} </div> -->
+            </div>
+          </td>
+        </tr>
+      </tbody>        
+    </table>
+    <button type="submit" class="btn btn-primary pull-right"> Save</button>
+</form>
+</div>
+</section>

@@ -5,7 +5,6 @@ var mongoose = require('mongoose'),
 
 var crypto = require('crypto');
 
-
 // define the schema for our user model
 var UsersSchema = new Schema({
     local            : {

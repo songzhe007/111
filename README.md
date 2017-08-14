@@ -7,7 +7,11 @@ EatReview Project-CS5610 Web Dev
 `npm install --save`
 
 
-## Tests
+## Admin User:
+Username: admin@admin
+Password: admin
+
+
 
 ### Yelp APIs:
 `node test/yelp_test.js`

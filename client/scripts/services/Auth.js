@@ -15,7 +15,7 @@ angular.module('yelpApp')
           provider: provider,
           email: user.local.email,
           username: user.local.email,
-          password: user.local.password,
+          password: user.local.password
         }, function(user) {
           console.log('login: user = ', user);
           if (user.admin === undefined) {
@@ -23,6 +23,7 @@ angular.module('yelpApp')
           }
           $rootScope.currentUser = user;
           $rootScope.currentUser.username = user.local.email;
+          $rootScope.currentUser.email = user.local.email;
           console.log('current_user:', $rootScope.currentUser);
 
           return cb();

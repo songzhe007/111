@@ -18,7 +18,7 @@ angular.module('yelpApp')
 
 
         $scope.adminMenu = [{
-            "title": "Users",
+            "title": "View All Users",
             "link": "admin"
         }];
 

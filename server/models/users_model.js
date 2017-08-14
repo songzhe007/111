@@ -46,7 +46,7 @@ UsersSchema
 UsersSchema
     .virtual('user_info')
     .get(function () {
-        return { '_id': this._id, 'email': this.local.email };
+        return { '_id': this._id, 'email': this.local.email, 'admin': this.admin };
     });
 
 

@@ -28,7 +28,7 @@ angular.module('yelpApp')
 
         $scope.create = function() {
             if (!$rootScope.currentUser) {
-                $location.path('/');
+                window.location.href = '/';
                 return;
             }
             console.log('in create');
@@ -43,6 +43,7 @@ angular.module('yelpApp')
                 }
             }).success(function(data){
                 console.log('success');
+                window.location.href = "/reviews";
                 $scope.reviews = data;
                 console.log(data);
             }).error(function(error){

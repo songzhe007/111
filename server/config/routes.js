@@ -29,12 +29,20 @@ module.exports = function(app, passport) {
   // Reviews Routes
   var reviews = require('../controllers/reviews');
   app.get('/api/reviews', reviews.all);
+  app.delete('/api/reviews', reviews.delete_review);
+  app.post('/api/reviews/update', reviews.update_review);
   app.post('/api/reviews/store/*/create', reviews.create);
 
   // Users Routes
   var users = require('../controllers/users');
   app.get('/api/users', users.all);
   app.post('/api/users', users.update_all);
+  app.delete('/api/users', users.delete_user);
+
+  var profiles = require('../controllers/profiles');
+  app.get('/api/profiles', profiles.all_reviews);
+  app.get('/api/profiles/userinfo', profiles.fetch_userinfo);
+  app.post('/api/profiles/userinfo', profiles.update_userinfo);
 
   // Angular Routes
   app.get('/views/partials/*', function(req, res) {

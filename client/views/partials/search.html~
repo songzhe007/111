@@ -1,0 +1,16 @@
+<section>
+    <form class="form-horizontal" ng-submit="search()">
+        <div class="form-group">
+            <label class="control-label" for="content">Content</label>
+            <div class="controls">
+                <input ng-model="yelp.term" class="form-control" id="term" placeholder="Term"></input>
+                <input ng-model="yelp.location" class="form-control" id="location" placeholder="Term"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+            </div>
+        </div>
+    </form>
+</section>

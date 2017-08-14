@@ -1,0 +1,54 @@
+<div class="account-wall">
+
+    <section ng-controller="ProfilesCtrl" ng-init="init()">
+        <form style="text-align: center" class="form-inline" ng-submit="updateInfo()">
+            <div class="form-group">
+                <div class="controls">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">First Name</div>
+                        <input ng-model="firstName" class="form-control" id="firstName" placeholder=""></input>
+                    </div>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Last Name</div>
+                        <input ng-model="lastName" class="form-control" id="lastName" placeholder=""></input>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="controls">
+                    <button type="submit" class="btn btn-primary pull-right">Update</button>
+                </div>
+            </div>
+        </form>
+        <br/>
+
+        <div>
+         <button type="button" class="btn btn-danger" ng-click="deleteAccount()"> Delete Account</button>
+        </div>
+
+        <br/>
+
+        <h2>Reviews</h2>
+        <br>
+        <div ng-repeat="review in reviews">
+            <h1>
+                <div ng-dblclick="edit(review)">
+                    <input style=" border:none;
+    background-color:transparent;" ng-model="review.title" ng-blur="doneEditing(review)"  />
+                </div>
+            </h1>
+            <p>
+            <div ng-dblclick="edit(review)">
+                <input style=" border:none;
+    background-color:transparent;" ng-model="review.content" ng-blur="doneEditing(review)"  />
+            </div>
+
+            </p>
+            <div>
+                <span class="badge badge-success">Posted {{review.created | date:'medium'}}</span>
+                <div class="pull-right"><button type="button" class="btn btn-danger" ng-click="deleteReview($index)"> Delete </button></div>
+            </div>
+            <hr>
+        </div>
+    </section>
+</div>

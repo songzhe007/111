@@ -11,7 +11,7 @@ angular.module('yelpApp')
 
                 $http({
                     url: '/api/users',
-                    method: 'GET',
+                    method: 'GET'
                 }).success(function(users) {
                     console.log('users', users);
                     //$scope.users = users;
@@ -48,5 +48,25 @@ angular.module('yelpApp')
             });
 
         };
+
+        $scope.deleteUser = function(index) {
+            console.log('delete user', $scope.users[index].Email);
+            console.log('delete review!');
+            console.log('index: ', index);
+            var email = $scope.users[index].Email;
+            $scope.users.splice(index, 1);
+            $http({
+                url: '/api/users',
+                method: 'DELETE',
+                params: {
+                    email: email
+                }
+            }).success(function(user) {
+
+            }).error(function(err) {
+                console.log(err);
+            });
+
+        }
 
     });

@@ -12,8 +12,8 @@ angular.module('yelpApp')
         }];
 
         $scope.authMenu = [{
-//            "title": "Create New Blog",
-//            "        link": "blogs/create"
+            "title": 'Profile',
+            "link": 'profile'
         }];
 
 

@@ -1,18 +1,21 @@
-<section ng-controller="ReviewsCtrl" ng-init="list_reviews()">
-  
-    <div ng-repeat="review in reviews">
-        <h1><a ng-href="reviews/{{review._id}}">{{review.title}}</a></h1>
-        <p>{{review.content}}</p>
-        <div>
-            <span class="badge badge-success">Posted {{review.created | date:'medium'}}</span>
-            <div class="pull-right"><span class="badge badge-success">Posted by
-                {{review.creator}}</span>
+<div class="account-wall">
+    <section ng-controller="ReviewsCtrl" ng-init="list_reviews()">
+
+        <div ng-repeat="review in reviews">
+            <h1>{{review.title}}</a></h1>
+            <p>{{review.content}}</p>
+            <div>
+                <span class="badge badge-success">Posted {{review.created | date:'medium'}}</span>
+                <div class="pull-right">
+                    <span class="badge badge-success">
+                        Posted by {{review.creator}}
+                    </span>
+                    <span ng-show="isAdmin"><button type="button" class="btn btn-danger" ng-click="deleteReview($index)"> Delete </button></span>
+                </div>
             </div>
+            <hr>
         </div>
-        <hr>
-    </div>
-    <h1 ng-hide="!reviews || reviews.length ">No Reviews yet. </h1>
-    <div ng-show="reviews && {{enable_write_review}}"> <form action="{{actionUrl}}" method="GET">  <button> Write a review! </button> </form> </div>
-</section>
-
-
+        <h1 ng-hide="!reviews || reviews.length ">No Reviews yet. </h1>
+        <div ng-show="reviews && {{enable_write_review}}"> <form action="{{actionUrl}}" method="GET">  <button> Write a review! </button> </form> </div>
+    </section>
+</div>

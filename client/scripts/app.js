@@ -31,6 +31,9 @@ app.config(function ($routeProvider) {
     })    .when('/login', {
       templateUrl: 'views/partials/login.html',
       controller: 'LoginCtrl'
+    }).when('/profile', {
+      templateUrl: 'views/partials/profile.html',
+      controller: 'ProfilesCtrl'
     })
         .otherwise({
         redirectTo: 'views/partials/main.html'

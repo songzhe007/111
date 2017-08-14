@@ -4,6 +4,7 @@ angular.module('yelpApp')
     .controller('SearchCtrl', function ($http, $scope, $routeParams, $rootScope) {
         $scope.search = function() {
             console.log('search');
+            $scope.yelp_businesses = null;
             $http({
                 url: '/yelp/search',
                 method: 'GET',

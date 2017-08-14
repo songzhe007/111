@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('yelpApp')
-    .factory('Auth', function Auth($location, $rootScope, Session, User, $cookieStore) {
+  .factory('Auth', function Auth($location, $rootScope, Session, User, $cookieStore, $http) {
         console.log('auth.js');
     $rootScope.currentUser = $cookieStore.get('user') || null;
     $cookieStore.remove('user');
@@ -21,9 +21,13 @@ angular.module('yelpApp')
           if (user.admin === undefined) {
             user.admin = false;
           }
+
+
           $rootScope.currentUser = user;
           $rootScope.currentUser.username = user.local.email;
           $rootScope.currentUser.email = user.local.email;
+
+
           console.log('current_user:', $rootScope.currentUser);
 
           return cb();

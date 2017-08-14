@@ -93,3 +93,14 @@ exports.update_all = function(req, res) {
     update_sync(0);
     res.status(200);
 }
+
+exports.delete_user = function(req, res) {
+    console.log('delete_user', req.query.email);
+
+    User.remove({'local.email': req.query.email}, function(err) {
+        if (err) {
+            console.log(err);
+            res.status(500).json(err);
+        }
+    });
+}

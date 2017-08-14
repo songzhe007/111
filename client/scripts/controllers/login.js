@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('yelpApp')
-    .controller('LoginCtrl', function ($scope, Auth, $location) {
+    .controller('LoginCtrl', function ($scope, Auth, $location, $http, $rootScope) {
         $scope.error = {};
         $scope.user = {};
 
@@ -18,6 +18,17 @@ angular.module('yelpApp')
 
                            if (!err) {
                                $location.path('/');
+                               $http({
+                                   url: '/api/profiles/userinfo',
+                                   method: 'GET'
+                               }).success(function(profile) {
+                                   console.log('success get profile', profile);
+                                   $rootScope.currentUser.firstname = profile[0].firstName;
+                                   $rootScope.currentUser.lastname = profile[0].lastName;
+                               }).error(function(error) {
+                                   console.log(error);
+                               });
+
                            } else {
                                angular.forEach(err.errors, function(error, field) {
                                    form[field].$setValidity('mongoose', false);

@@ -25,6 +25,11 @@ var UsersSchema = new Schema({
         email        : String,
         name         : String
     },
+
+    facebook: {
+        id:String,
+        token: String
+    },
     admin: Boolean,
     provider: String
 }, {collection: 'users'});

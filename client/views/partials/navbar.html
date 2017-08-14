@@ -8,33 +8,74 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#/" style="display: inline-block ;font-family: Papyrus; background-color: #ffdd51; font-style: italic; font-weight: bolder; color: #0b0b0b ">Eat Review</a>
+                <a id="logo" class="navbar-brand" href="#/" style="display: inline-block ;font-family: Papyrus; background-color: #ffdd51; font-style: italic; font-weight: bolder; color: #0b0b0b ">Eat Review</a>
             </a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#/">Home</a></li>
+
+                <li class="dropdown">
+                    <a class="active dropdown-toggle" data-toggle="dropdown" href="">
+                        Home
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a style="background-color: lightskyblue; color: #555555;"; id="light">Light Theme </a></li>
+                        <li><a style="background-color: brown; color: #f9f9f9;" id="dark">Dark Them </a></li>
+                        <script style="text/javascript">
+                            var e1 = document.getElementById("light");
+                            var e2 = document.getElementById("dark");
+                            var light = true;
+                            e1.onclick = function () {
+                                $('body').css('background', 'url(http://www.kanhangadvartha.com/data/out/102/IMG_1028707.png) fixed');
+                                $('body').css('background-size', "100%");
+                                $('nav').removeClass("navbar-default");
+                                $('nav').addClass("navbar-inverse");
+                                $('#logo').css('background-color', '#ffdd51');
+                                $('#logo').css('color', '#0b0b0b');
+                                $('#homeHeading').css('color', 'darkslategray');
+                                $('#homeContent').css('color', '#0c000a');
+                                $('footer').css('color', '#0c000a');
+                                light = true;
+                            };
+                            e2.onclick = function () {
+                                $('body').css('background', 'url(http://www.internetmonk.com/wp-content/uploads/The_Darkness_Wall_By_Kon_2560X1600.jpeg) fixed');
+                                $('body').css('background-size', "100%");
+                                $('nav').removeClass("navbar-inverse");
+                                $('nav').addClass("navbar-default");
+                                $('#logo').css('background-color', '#1a4182');
+                                $('#logo').css('color', '#dce1ea');
+                                $('#homeHeading').css('color', '#e09ad4');
+                                $('#homeContent').css('color', '#e8a83a');
+                                $('footer').css('color', '#e8a83a');
+                                light = false;
+                            };
+                        </script>
+                    </ul>
+                </li>
+
                 <li ng-repeat="item in menu" ui-route="/#/{{item.link}}" ng-class="{active: $uiRoute}">
                     <a href="/#/{{item.link}}">{{item.title}}</a>
                 </li>
-                <!-- <li ng-repeat="item in authMenu" ng-show="currentUser" ui-route="/#/{{item.link}}" ng-class="{active: $uiRoute}"> -->
-                <!--     <a href="/#/{{item.link}}">{{item.title}}</a> -->
-                <!-- </li> -->
             </ul>
             <div class="nav navbar-nav navbar-right">
                 <ul class="nav navbar-nav" ng-hide="currentUser">
                     <li><a href="/#/login"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
                     <li><a href="/#/signup"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
-
                 </ul>
                 <ul class="nav navbar-nav" ng-show="currentUser">
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#/">
-                            Welcome, {{ currentUser.email }}
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                            <span ng-if="currentUser.firstname">Welcome, {{ currentUser.firstname }}</span>
+                            <span ng-if="!currentUser.firstname">Welcome, {{ currentUser.email }}</span>
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li ng-show="currentUser.admin" ng-repeat="item in adminMenu" ui-route="/#/{{item.link}}" ng-class="{active: $uiRoute}">
+                                <a href="/#/{{item.link}}">{{item.title}}</a>
+                            </li>
+
+                            <li ng-repeat="item in authMenu" ng-show="currentUser" ui-route="/#/{{item.link}}" ng-class="{active: $uiRoute}">
                                 <a href="/#/{{item.link}}">{{item.title}}</a>
                             </li>
                             <li><a ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout </a></li>
@@ -43,8 +84,7 @@
                 </ul>
                 <ul class="nav navbar-nav">
                     <li>
-                    <li><a href="https://docs.google.com/document/d/1_nAomNVU2aCowWiKgdChc65NEvhkKsGOZ5Tx5jnSrmE/edit"> Project Documentation </a></li>
-
+                        <a onclick="window.scrollTo(0, document.body.scrollHeight); ">Contact Us</a>
                     </li>
                 </ul>
             </div>

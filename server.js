@@ -28,10 +28,10 @@ var pass = require('./server/config/passport');
 // App Configuration
 app.use(morgan('dev')); // log every request to the console
 app.use(express.static(path.join(__dirname, '/client')));
-app.set('views', __dirname + '/client');
+app.set('views', __dirname + '/client/views');
 
 app.set('view engine', 'html');
-//app.engine('html', require('ejs').renderFile);
+app.engine('html', require('ejs').renderFile);
 
 // set up our express application
 app.use(cookieParser()); // read cookies (needed for auth)

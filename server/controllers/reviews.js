@@ -21,13 +21,11 @@ exports.all = function(req, res) {
 
 };
 
+exports.findByAuthor = function(creator, callback) {
+    Reviews.find({creator: creator}, callback);
+};
 
 exports.create = function(req, res) {
-    console.log('create');
-    console.log('---params');
-    console.log(req.params);
-    console.log('---query');
-    console.log(req.query);
     var review = new Reviews({
         businessId: req.query.businessId,
         title: req.query.title,
@@ -45,4 +43,23 @@ exports.create = function(req, res) {
         }
     });
 };
-//};
+
+exports.delete_review = function(req, res) {
+    console.log('delete review');
+    Reviews.remove({_id: req.query.reviewId}, function(err) {
+        if (err) {
+            console.log(err);
+            res.status(500).json(err);
+        }
+    });
+};
+
+exports.update_review = function(req, res) {
+    console.log('delete review, _id', req.query.reviewId);
+    Reviews.findOneAndUpdate({_id: req.query.reviewId}, {title: req.query.title, content: req.query.content}, function(err) {
+        if (err) {
+            console.log(err);
+            res.status(500).json(err);
+        }
+    });
+};

@@ -1,4 +1,0 @@
-'use strict';
-
-angular.module('angularPassportApp')
-    .controller('SearchCtrl', function ($scope, Blogs, $location, $routeParams, $rootScope) {

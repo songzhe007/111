@@ -14,5 +14,5 @@ Password: admin
 ## Tech Doc:
 https://docs.google.com/document/d/1_nAomNVU2aCowWiKgdChc65NEvhkKsGOZ5Tx5jnSrmE/edit
 
-### Yelp APIs:
-`node test/yelp_test.js`
+### Yelp API:
+https://www.yelp.com/developers/documentation/v3/business_search

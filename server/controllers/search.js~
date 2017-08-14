@@ -1,6 +1,0 @@
-'use strict';
-
-var yelp = require('');
-exports.search = function(req, res) {
-    res.
-}

@@ -14,13 +14,13 @@
         </div>
         <div class="form-group">
             <div class="controls">
-                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                <button type="submit" class="btn btn-primary pull-right">Search</button>
             </div>
         </div>
     </form>
 
     <br>
-    <div ng-if="!yelp_businesses.length" style="color: red; font-weight: bold">No Results</div>
+    <div ng-if="!yelp_businesses.length" > Have not searched anything yet? Try it now!</div>
     <div ng-if="yelp_businesses.length">
         <div class="account-wall">
             <table id="searchingTable" class="table table-striped" border="1">

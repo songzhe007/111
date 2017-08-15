@@ -16,14 +16,17 @@
             </div>
             <div class="form-group">
                 <div class="controls">
-                    <button type="submit" class="btn btn-primary pull-right">Update</button>
+                    <span class = "alert alert-success" ng-show="isUpdated">
+                        <strong> Profile changes saved!</strong> </span>
+                    <button  type="submit" class="btn btn-primary pull-right">Update</button>
+
                 </div>
             </div>
         </form>
         <br/>
 
         <div>
-         <button type="button" class="btn btn-danger" ng-click="deleteAccount()"> Delete Account</button>
+            <a href="/#/login" ng-click="deleteAccount()" class="btn btn-danger">Delete Account</a>
         </div>
 
         <br/>
@@ -34,20 +37,23 @@
             <h1>
                 <div ng-dblclick="edit(review)">
                     <input style=" border:none;
-    background-color:transparent;" ng-model="review.title" ng-blur="doneEditing(review)"  />
+    background-color:yellow;" ng-model="review.title" ng-blur="doneEditing(review)"  />
                 </div>
             </h1>
+
             <p>
             <div ng-dblclick="edit(review)">
                 <input style=" border:none;
-    background-color:transparent;" ng-model="review.content" ng-blur="doneEditing(review)"  />
+    background-color:transparent;" ng-model="review.content" ng-blur="doneEditing(review)"/>
             </div>
-
             </p>
+
+
             <div>
                 <span class="badge badge-success">Posted {{review.created | date:'medium'}}</span>
-                <div class="pull-right"><button type="button" class="btn btn-danger" ng-click="deleteReview($index)"> Delete </button></div>
-            </div>
+                <div class="pull-right">
+                    <button type="button" class="btn btn-danger" ng-click="deleteReview($index)"> Delete </button></div>
+
             <hr>
         </div>
     </section>

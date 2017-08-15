@@ -25,6 +25,7 @@ angular.module('yelpApp')
         $scope.logout = function() {
             Auth.logout(function(err) {
                 if(!err) {
+                    $scope.isLogout=true;
                     $location.path('/login');
                 }
             });

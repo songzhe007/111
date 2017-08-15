@@ -43,6 +43,7 @@ angular.module('yelpApp')
                     lastName: $scope.lastName
                 }
             }).success(function(userinfo) {
+                $scope.isUpdated=true;
 
             }).error(function(error) {
                 $scope.reviews = error;
@@ -82,6 +83,7 @@ angular.module('yelpApp')
                     content: review.content
                 }
             }).success(function(review) {
+                $scope.isEdited=true;
 
             }).error(function(error) {
                 $scope.reviews.error;
@@ -97,11 +99,13 @@ angular.module('yelpApp')
                     email: $rootScope.currentUser.email
                 }
             }).success(function(user) {
+                $scope.isDeleteAccount=true;
+                $location.url("/");
             }).error(function(err) {
                 console.log(err);
             });
             Auth.logout();
-            window.location.href = "/";
+            //window.location.href = "/login";
 
         }
     });

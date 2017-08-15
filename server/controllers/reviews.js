@@ -55,6 +55,7 @@ exports.delete_review = function(req, res) {
 };
 
 exports.update_review = function(req, res) {
+    var vm= this;
     console.log('delete review, _id', req.query.reviewId);
     Reviews.findOneAndUpdate({_id: req.query.reviewId}, {title: req.query.title, content: req.query.content}, function(err) {
         if (err) {

@@ -84,6 +84,7 @@ angular.module('yelpApp')
                 }
             }).success(function(review) {
                 $scope.isEdited=true;
+                $scope.edited= "Reviews Updated!"
 
             }).error(function(error) {
                 $scope.reviews.error;

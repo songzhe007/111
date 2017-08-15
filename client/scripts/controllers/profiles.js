@@ -101,7 +101,7 @@ angular.module('yelpApp')
                 }
             }).success(function(user) {
                 $scope.isDeleteAccount=true;
-                $location.url("/");
+               // $location.url("/");
             }).error(function(err) {
                 console.log(err);
             });

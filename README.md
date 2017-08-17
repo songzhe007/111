@@ -56,7 +56,8 @@ Add/Edit  Reviews
 
 See Reviews
 * Everyone can see all reviews that has been made by logged in users.
-* Admin users are able to delete any reviews from the website.
+* Admin users are able to delete any reviews from the website, including the reviews posted by  deleted users.
+* Reviews will not be deleted even if the user who posted it is deleted.
 * If anyone is interest in a review, they can email that user who made it. 
 
 Theme Customization 

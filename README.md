@@ -8,10 +8,8 @@ Prior to login a different account, please make sure you log out the current one
 
 Simply refresh the page if there is any displaying issue.
  
- WebApp is deployed at: https://cs5610-eatreview-zhesong.herokuapp.com
+WebApp is deployed at: https://cs5610-eatreview-zhesong.herokuapp.com
  
- Portfolio is deployed at: https://portfolio-zhesong.herokuapp.com/
-
 ## Installation
 
 `npm install --save`
